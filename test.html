@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+.button {
+  padding: 4px 8px;
+  text-align: center;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid lightcoral;
+}
+
+.button1:hover {
+  background-color: maroon;
+  color: white;  
+  border: 2px solid maroon;
+}
+</style>
 <body>
+    <h1>This Is a Page With Buttons</h1>
     <p>This is a test from Beau</p>
-    <button id="myButton"> Click Me</button>
-    <button id="myButton"> Click Me Too! I'm jerermy</button>
-    <button id="myButton"> Click Me Three! test from poobanaa</button>
-    <button id="myButton"> Click me Four! Test from Lynn!</button>
+    <button id="myButton0", class="button button1"> Click Me</button>
+    <button id="myButton1", class="button button1"> Click Me Too! I'm jerermy</button>
+    <button id="myButton2", class="button button1"> Click Me Three! test from poobanaa</button>
+    <button id="myButton3", class="button button1"> Click me Four! Test from Lynn!</button>
     <script src="script.js"></script>
     
 </body>
