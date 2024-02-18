@@ -11,4 +11,5 @@ const clickElement = document.getElementById("myButton");
 clickElement.addEventListener('click', function() {
    clicks += 1;
    console.log("Button 1 clicked. Total clicks: " + clicks);
+   console.log("Button 2 clicked. Total clicks: " + clicks);
 });
