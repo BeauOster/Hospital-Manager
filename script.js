@@ -7,6 +7,7 @@ var clicks = 0;
 const clickElement = document.getElementById("myButton");
 
 // Simple event listener that waits until the above button is clicked.
+//Adding test comment
 // You can view if it's working or not by opening up the webpage (test.html) and checking the console.
 clickElement.addEventListener('click', function() {
    clicks += 1;
