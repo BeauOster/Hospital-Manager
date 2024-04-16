@@ -4,6 +4,7 @@ import TEST_DATA from './TEST_DATA.json'
 import { COLUMNS } from './Columns'
 import styles from '../Styles/TableSorting.module.css'
 import { GlobalFilter } from './GlobalFilter'
+import Link from 'next/link';
 
 // Define the TableSorting component
 export const PatientTable = () => {
@@ -48,7 +49,7 @@ export const PatientTable = () => {
 
                                 <th {...column.getHeaderProps(column.getSortByToggleProps)}>
                                     {column.render('Header')}
-                                    <div>{column.canFilter ? column.render('Filter') : null}</div>
+                                    <div>{column.canFilter ? column.render('Filter', ) : null}</div>
                                     <span>
                                         {/*Check if column is sorted, '' means render an empty string if not sorted at all.*/}
                                         {column.isSorted ? (column.isSortedDesc ?  ' 🔽' : ' 🔼') : ''}
@@ -70,6 +71,15 @@ export const PatientTable = () => {
                             <tr {...row.getRowProps()}>
                                 {
                                     row.cells.map((cell) => {
+                                        if (cell.column.id === 'PatientID') {
+                                            return (
+                                                <td {...cell.getCellProps()}>
+                                                <Link href={`/patients/${cell.value}`}>
+                                                  {cell.render('Cell')}
+                                                </Link>
+                                                </td>
+                                            );
+                                        }
                                         return <td {...cell.getCellProps}>{cell.render('Cell')}</td> 
                                     })
                                 }
