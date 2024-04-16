@@ -1,0 +1,28 @@
+/* Styling for the About Page Intro Paragraph */
+.introParagraph{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Styling for the About Page Patient Experience Paragraph */
+.experienceParagraph{
+    float: left;
+    
+}
+
+/* Styling for the About Page Reduced Workload Paragraph */
+.workloadParagraph{
+    float:right;
+}
+
+.aboutMain{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* Font styling for about page paragraphs */
+.workloadFont, .experienceFont, .managementFont {
+    font-size: 1.13em;
+}

@@ -1,15 +1,15 @@
 import React from 'react';
+import '../Styles/global.css';
 
 export default function NavBar(){
     return(
-        <div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#signup">Sign Up</a></li>
-                <li><a href="#log in">Log In</a></li>
-                <li><a href="#viewrecords">View Records</a></li> 
-                <li><a href="#inputrecords">Input New Records</a></li>
-            </ul>
-        </div>
+        <nav>
+            <div className="topNav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#signup">Sign Up</a>
+                <a href="#log in">Log In</a>
+            </div>
+        </nav>
     );
 }

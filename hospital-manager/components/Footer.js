@@ -1,11 +1,12 @@
 import React from 'react';
+import '../Styles/global.css';
 
 export default function Footer(){
     return(
-        <footer>
+        <footer className="footerStyle">
             <ul>
-                <li><a href="#contact">Contact Customer Service</a></li>
-                <li><a href="#email">Reach Us By Email</a></li> 
+                <p>Contact Us via Email: RestAssuredTech@gmail.com</p>
+                <p>Need immediate support? Call 715-683-9887</p>
             </ul>
         </footer>
     );

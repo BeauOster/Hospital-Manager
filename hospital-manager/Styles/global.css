@@ -1,0 +1,67 @@
+/* Deals with the css styling for page header and quote/slogan */
+.pageHeader{
+    font-weight: bold;
+    text-align: center;
+}
+.pageQuote{
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* Add background color to the top navigation */
+.topNav{
+    background-color: #31d16e;
+    overflow: hidden;
+}
+
+/* Styles the links inside of the navigation bar */
+.topNav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+/* Change the color of links on hover */
+.topNav a:hover {
+    background-color: #ddd;
+    color: black;
+    opacity: 1;
+}
+
+/* Add a color to the active/current link */
+.topNav a:active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Styling for the footer element */
+.footerStyle {
+    /*position:fixed;*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #31d16e;
+    color: #f2f2f2;
+}
+
+/* Font family style */
+html{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+}
+
+/* Styling for welcome page text and image */
+.welcomeParagraph{
+    padding: 1.3em;
+    width: 72.6%;
+    position: relative;
+    left: 46%;
+
+}
+
