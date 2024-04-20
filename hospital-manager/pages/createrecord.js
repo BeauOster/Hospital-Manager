@@ -4,7 +4,6 @@ import Form from '../components/Form';
 const CreatePatientRecordForm = () => {
 
     const PatientRecordSchema = [
-        { name: 'PatientID', label: 'Patient ID', type: 'number', required: true },
         { name: 'First_Name', label: 'First Name', type: 'text', required: true },
         { name: 'Last_Name', label: 'Last Name', type: 'text', required: true },
         { name: 'Age', label: 'Age', type: 'number', required: true },
@@ -21,6 +20,20 @@ const CreatePatientRecordForm = () => {
 
     // Back end stuff here later
     const handlePatientRecordSubmit = (formInput) => {
+        fetch('http://localhost:5000/create_patient_record', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formInput)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message); // Handles error/success message
+        })
+        .catch(error => {
+            console.error('Error:', error); //handles error
+        });
         // Send formData to backend server for processing
         console.log('Patient record form data:', formInput);
     };

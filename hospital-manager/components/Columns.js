@@ -3,27 +3,27 @@ import { ColumnFilter } from './ColumnFilter'
 export const COLUMNS = [
     {
         Header: 'Patient ID',
-        accessor: 'PatientID',
+        accessor: (row) => row[0],
         Filter: ColumnFilter
     },
     {
         Header: 'First Name',
-        accessor: 'First_Name',
+        accessor: (row) => row[1],
         Filter: ColumnFilter
     },
     {
         Header: 'Last Name',
-        accessor: 'Last_Name',
+        accessor: (row) => row[2],
         Filter: ColumnFilter
     },
     {
         Header: 'Age',
-        accessor: 'Age',
+        accessor: (row) => row[3],
         Filter: ColumnFilter
     },
     {
         Header: 'Gender',
-        accessor: 'Gender',
+        accessor: (row) => row[4],
         Filter: ColumnFilter
     }
 ]

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useTable, useGlobalFilter, useFilters, useSortBy } from 'react-table'
 import TEST_DATA from './TEST_DATA.json'
 import { COLUMNS } from './Columns'
@@ -13,7 +13,28 @@ export const PatientTable = () => {
      // Without memoization, COLUMNS and TEST_DATA would be recalculated every
      // time the component re-renders, even if the inputs haven't changed.
     const columns = useMemo(() => COLUMNS, [])
-    const data = useMemo(() => TEST_DATA, [])
+    //const data = useMemo(() => TEST_DATA, [])
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/get_patient_records');
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data try again loser lol')
+                }
+
+                const data = await response.json();
+                setData(data);
+
+            } catch (error) {
+                console.log('Error fetching data or smthing')
+            }
+        };
+
+        fetchData();
+    }, []);
 
     // Destructure tableInstance object to access necessary properties and methods
     const {
@@ -25,14 +46,16 @@ export const PatientTable = () => {
         state,
         setGlobalFilter,
     } = useTable ({
-        columns: columns,
-        data: data
+            columns,
+            data
         },
         useFilters,
         useGlobalFilter, // All of these are hooks DO. NOT. TOUCH. OR CHANGE ORDER.
         useSortBy)
 
     const { globalFilter } = state
+
+    console.log('Data fetched successfully:', data);
 
     // Render the PatientTable component
     return (
@@ -70,8 +93,8 @@ export const PatientTable = () => {
                         return (
                             <tr {...row.getRowProps()}>
                                 {
-                                    row.cells.map((cell) => {
-                                        if (cell.column.id === 'PatientID') {
+                                    row.cells.map((cell, index) => {
+                                        if (index === 0) {
                                             return (
                                                 <td {...cell.getCellProps()}>
                                                 <Link href={`/patients/${cell.value}`}>
