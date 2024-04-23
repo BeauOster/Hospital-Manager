@@ -1,0 +1,26 @@
+.patRecord, .medRecord {
+    background-color: rgb(231, 231, 208);
+    width: 500px;
+    height: 300px;
+    resize: vertical;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+fieldset{
+    padding: 2%;
+    margin-bottom: 0.8em;
+}
+
+legend{
+    background-color: rgb(55, 163, 51);
+    color: white;
+    padding: 5px 10px;
+}
+
+input{
+    margin: 5px;
+}

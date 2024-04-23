@@ -1,5 +1,10 @@
 import React from 'react';
 import Form from '../components/Form';
+import '../Styles/global.css';
+import '../Styles/recordStyles.css';
+import Header from '../components/Header';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const CreatePatientRecordForm = () => {
 
@@ -31,11 +36,35 @@ const CreatePatientRecordForm = () => {
     };
 
     return (
-        <div>
+        <div className="recordMain">
+            <Header />
+            <NavBar />
             <h1>Create Patient Record</h1>
-            <Form schema={PatientRecordSchema} onSubmit={handlePatientRecordSubmit} />
+
+            <div className="patRecord">
+                
+                    <fieldset className="infoBox">
+                        <legend>Enter Personal Information</legend>
+                        <Form schema={PatientRecordSchema} onSubmit={handlePatientRecordSubmit} />
+                    </fieldset>
+            
+            </div>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
             <h1>Create Patient Medical Record </h1>
-            <Form schema={MedicalRecordFormSchema} onSubmit={handleMedicalRecordFormSubmit} />
+            <div className="medRecord">
+        
+                    <fieldset>
+                        <legend>Enter Medical Information</legend>
+                        <Form schema={MedicalRecordFormSchema} onSubmit={handleMedicalRecordFormSubmit} />
+                    </fieldset>
+
+            </div>
+            <Footer />
         </div>
     );
 };

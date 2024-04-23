@@ -2,7 +2,10 @@ import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import '../Styles/global.css';
+
+import Image from 'next/image';
 import welcomeImage from '../images/welcomeImage.jpg';
+
 
 
 
@@ -12,8 +15,9 @@ export default function Home() {
         <div className="homeMain">
             <Header />
             <NavBar /> 
+            <br></br>
             
-            <img src={welcomeImage} className="welcomeImage" alt="Welcome to Rest Assured" />
+        
             <article className="welcomeParagraph">
                 <h2>Welcome to Rest Assured</h2>
                 
@@ -37,7 +41,7 @@ export default function Home() {
                     retreive patient information. 
                 </p>
             </article>
-            
+            <Image src={welcomeImage} className="welcomeImage"  width={400} height={300} alt="Welcome to Rest Assured" />
             <Footer />
         </div>
     );

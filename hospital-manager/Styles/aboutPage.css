@@ -5,15 +5,15 @@
 }
 
 /* Styling for the About Page Patient Experience Paragraph */
-.experienceParagraph{
-    float: left;
-    
-}
+
 
 /* Styling for the About Page Reduced Workload Paragraph */
 .workloadParagraph{
     float:right;
 }
+
+/* Styling for the About Page Management Paragraph */
+
 
 .aboutMain{
     display: flex;
@@ -26,3 +26,4 @@
 .workloadFont, .experienceFont, .managementFont {
     font-size: 1.13em;
 }
+

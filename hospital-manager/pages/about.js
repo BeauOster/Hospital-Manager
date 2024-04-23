@@ -4,6 +4,8 @@ import '../Styles/aboutPage.css';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+
+import Image from 'next/image';
 import patientExperience from '../images/patientExperience.jpg';
 import missionImage from '../images/missionImage.jpg';
 import dataImage from '../images/dataImage.jpg';
@@ -17,7 +19,7 @@ function AboutPage() {
         
         <div className="introParagraph">
           <h2>The Mission</h2>
-          <img src={missionImage} className="missionImage" alt="Our System's Goal" />
+          <Image src={missionImage} className="missionImage" alt="Our System's Goal" />
           <p>This system is designed to help staff members add and organize important information
             about their patients in order to provide them with the best care possible. The Rest Assured 
             Hospital Management system automates administrative tasks such as patient registration,
@@ -34,7 +36,7 @@ function AboutPage() {
         <div className="experienceParagraph"> 
           
             <h2>Improved Patient Experience</h2>
-            <img src={patientExperience} className="patientImage" alt="Foster healthy experience" />
+            <Image src={patientExperience} className="patientImage" alt="Foster healthy experience" />
             <p className="experienceFont">Rest Assured Hospital Management aims to create an environment that fosters
               a seamless experience for both staff and patients. Both patients and staff 
               members are provided with a streamline way of booking appointments based on 
@@ -48,7 +50,7 @@ function AboutPage() {
 
         <div className="workloadParagraph">
           <h2>Reduced Workload and Paperwork Stress</h2>
-          <img src={workloadImage} className="workloadImage" alt="Reduced Workload" />
+          <Image src={workloadImage} className="workloadImage" width={450} height={300} alt="Reduced Workload" />
           <p className="workloadFont">By developing a system that streamlines workflow, this management system
             helps relieve the burden of managing large loads of paperwork for health
             care staff. Having a digitized way of organizing patient information can also
@@ -60,7 +62,7 @@ function AboutPage() {
 
         <div className="managementParagraph">
           <h2>Data Management</h2>
-          <img src={dataImage} className="dataImage" alt="Improved data management" />
+          <Image src={dataImage} className="dataImage" alt="Improved data management" />
           <p className="managementFont">The Rest Assured Management System ensures
           precise record-keeping of patient information such as their medical history,
           prescriptions, and test results. Maintaining this accuracy is important in
