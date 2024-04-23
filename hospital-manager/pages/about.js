@@ -11,7 +11,7 @@ import missionImage from '../images/missionImage.jpg';
 import dataImage from '../images/dataImage.jpg';
 import workloadImage from '../images/workloadImage.jpg';
 
-function AboutPage() {
+export default function AboutPage() {
     return (
       <div className="aboutMain">
         <Header />
@@ -93,4 +93,4 @@ function AboutPage() {
 
   }
   
-  export default AboutPage;
+  

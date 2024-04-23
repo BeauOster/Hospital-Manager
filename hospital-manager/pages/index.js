@@ -2,7 +2,8 @@ import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import '../Styles/global.css';
-
+import '../Styles/aboutPage.css';
+import '../Styles/recordStyles.css';
 import Image from 'next/image';
 import welcomeImage from '../images/welcomeImage.jpg';
 
