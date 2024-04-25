@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Styles/global.css';
-import '../Styles/aboutPage.css';
+
+import aboutStyle from '../Styles/aboutPage.module.css';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -13,11 +13,11 @@ import workloadImage from '../images/workloadImage.jpg';
 
 export default function AboutPage() {
     return (
-      <div className="aboutMain">
+      <div className={aboutStyle.aboutMain}>
         <Header />
         <NavBar />
         
-        <div className="introParagraph">
+        <div className={aboutStyle.introParagraph}>
           <h2>The Mission</h2>
           <Image src={missionImage} className="missionImage" alt="Our System's Goal" />
           <p>This system is designed to help staff members add and organize important information
@@ -37,7 +37,7 @@ export default function AboutPage() {
           
             <h2>Improved Patient Experience</h2>
             <Image src={patientExperience} className="patientImage" alt="Foster healthy experience" />
-            <p className="experienceFont">Rest Assured Hospital Management aims to create an environment that fosters
+            <p className={aboutStyle.experienceFont}>Rest Assured Hospital Management aims to create an environment that fosters
               a seamless experience for both staff and patients. Both patients and staff 
               members are provided with a streamline way of booking appointments based on 
               availability. When patient flow is optimized, it can lead to reduced waiting periods, 
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="workloadParagraph">
           <h2>Reduced Workload and Paperwork Stress</h2>
           <Image src={workloadImage} className="workloadImage" width={450} height={300} alt="Reduced Workload" />
-          <p className="workloadFont">By developing a system that streamlines workflow, this management system
+          <p className={aboutStyle.workloadFont}>By developing a system that streamlines workflow, this management system
             helps relieve the burden of managing large loads of paperwork for health
             care staff. Having a digitized way of organizing patient information can also
             play a crucial role in preventing or minimizing errors, such as misdiagnosis,
@@ -63,7 +63,7 @@ export default function AboutPage() {
         <div className="managementParagraph">
           <h2>Data Management</h2>
           <Image src={dataImage} className="dataImage" alt="Improved data management" />
-          <p className="managementFont">The Rest Assured Management System ensures
+          <p className={aboutStyle.managementFont}>The Rest Assured Management System ensures
           precise record-keeping of patient information such as their medical history,
           prescriptions, and test results. Maintaining this accuracy is important in
           terms of providing patients with the most efficient care. Being able to quickly
@@ -72,7 +72,7 @@ export default function AboutPage() {
           serious and potentially life-threatening outcomes for the patients. 
           </p>
 
-          <p className="managementFont">In terms of its technical benefits, this system
+          <p className={aboutStyle.managementFont}>In terms of its technical benefits, this system
           utilizes the accurate patient data in order to make sure that billing claims
           properly reflect the services being provided. As hospital staff members, it is
           important to note that inaccuracies in this information can lead to losses for 

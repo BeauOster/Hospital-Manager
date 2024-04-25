@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../components/Form';
-import '../Styles/global.css';
-import '../Styles/recordStyles.css';
+
+import recStyles from '../Styles/recordStyle.module.css';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -17,7 +17,7 @@ const CreatePatientRecordForm = () => {
     ];
 
     const MedicalRecordFormSchema = [
-        { name: 'RecordID', label: 'Record ID', type: 'number', required: true },
+        { name: 'RecordID', label: 'Record ID', type: 'number', required: true},
         { name: 'Medical_History', label: 'Medical History', type: 'text', required: true },
         { name: 'Diagnosis', label: 'Diagnosis', type: 'text', required: true },
         { name: 'PatientID', label: 'Patient ID', type: 'number', required: true },
@@ -36,15 +36,15 @@ const CreatePatientRecordForm = () => {
     };
 
     return (
-        <div className="recordMain">
+        <div className={recStyles.recordMain}>
             <Header />
             <NavBar />
             <h1>Create Patient Record</h1>
 
-            <div className="patRecord">
+            <div className={recStyles.patRecord}>
                 
-                    <fieldset className="infoBox">
-                        <legend>Enter Personal Information</legend>
+                    <fieldset className={recStyles.fieldBox}>
+                        <legend className={recStyles.legendBox}>Enter Personal Information</legend>
                         <Form schema={PatientRecordSchema} onSubmit={handlePatientRecordSubmit} />
                     </fieldset>
             
@@ -56,10 +56,10 @@ const CreatePatientRecordForm = () => {
             <br></br>
 
             <h1>Create Patient Medical Record </h1>
-            <div className="medRecord">
+            <div className={recStyles.medRecord}>
         
-                    <fieldset>
-                        <legend>Enter Medical Information</legend>
+                    <fieldset className={recStyles.fieldBox}>
+                    <legend className={recStyles.legendBox}>Enter Medical Information</legend>
                         <Form schema={MedicalRecordFormSchema} onSubmit={handleMedicalRecordFormSubmit} />
                     </fieldset>
 

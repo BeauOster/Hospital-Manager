@@ -1,0 +1,30 @@
+/* Styling for the About Page Intro Paragraph */
+.introParagraph{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Styling for the About Page Patient Experience Paragraph */
+
+
+/* Styling for the About Page Reduced Workload Paragraph */
+.workloadParagraph{
+    float:right;
+}
+
+/* Styling for the About Page Management Paragraph */
+
+
+.aboutMain{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+}
+
+/* Font styling for about page paragraphs */
+.workloadFont, .experienceFont, .managementFont {
+    font-size: 1.13em;
+}
+

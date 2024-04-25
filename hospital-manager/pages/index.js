@@ -1,9 +1,8 @@
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import '../Styles/global.css';
-import '../Styles/aboutPage.css';
-import '../Styles/recordStyles.css';
+import styles from '../Styles/global.module.css';
+
 import Image from 'next/image';
 import welcomeImage from '../images/welcomeImage.jpg';
 
@@ -13,13 +12,13 @@ import welcomeImage from '../images/welcomeImage.jpg';
 
 export default function Home() {
     return (
-        <div className="homeMain">
+        <div className={styles.font}>
             <Header />
             <NavBar /> 
             <br></br>
             
         
-            <article className="welcomeParagraph">
+            <article className={styles.welcomeParagraph}>
                 <h2>Welcome to Rest Assured</h2>
                 
                 <p>A new and improved way of capturing, storing, and retreiving patient
@@ -42,7 +41,7 @@ export default function Home() {
                     retreive patient information. 
                 </p>
             </article>
-            <Image src={welcomeImage} className="welcomeImage"  width={400} height={300} alt="Welcome to Rest Assured" />
+            <Image src={welcomeImage} className={styles.welcomeImage}  width={400} height={300} alt="Welcome to Rest Assured" />
             <Footer />
         </div>
     );
