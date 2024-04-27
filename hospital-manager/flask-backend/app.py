@@ -61,5 +61,25 @@ def get_patient_record(id):
     else:
         return jsonify({})  # Return an empty object if no patient found
 
+@app.route('/update_patient_record/<int:id>', methods =['PUT'])
+def update_patient_record(id):
+    try:
+        form_patientdata = request.json
+
+        first_name = form_patientdata['First_Name']
+        last_name = form_patientdata['Last_Name']
+        age = form_patientdata['Age']
+        gender = form_patientdata['Gender']
+
+        cur = mysql.connection.cursor()
+        cur.execute("UPDATE Patient SET First_Name=%s, Last_Name=%s, Age=%s, Gender=%s WHERE PatientID=%s",
+                    (first_name, last_name, age, gender, id))
+        mysql.connection.commit()
+        cur.close()
+        
+        return jsonify(message='Patient record updated successfully')
+    except Exception as e:
+        return jsonify(error=str(e)), 500  # Return error message and 500 status code
+
 if __name__ == '__main__':
     app.run(debug=True)

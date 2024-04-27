@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 //import TEST_DATA from '../../components/TEST_DATA.json'
 import PatientDetails from '../../components/PatientDetails';
+import Form from '../../components/Form';
 
 const PatientPage = () => {
+
+  const PatientRecordSchema = [
+    { name: 'First_Name', label: 'First Name', type: 'text', required: true },
+    { name: 'Last_Name', label: 'Last Name', type: 'text', required: true },
+    { name: 'Age', label: 'Age', type: 'number', required: true },
+    { name: 'Gender', label: 'Gender', type: 'text', required: true }
+];
+
   const router = useRouter();
   console.log(router.query)
   const { id } = router.query;
@@ -48,6 +57,33 @@ const PatientPage = () => {
 
   }, [id]);
 
+  const handlePatientUpdate = async (formInput) => {
+
+    try {
+      
+      const response = await fetch(`http://localhost:5000/update_patient_record/${router.query.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formInput),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update patient record');
+      }
+
+      const data = await response.json();
+      console.log(data.message); // Handles error/success message
+      //Update the patient state with the updated data
+      setPatient(formInput);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+
+  };
+
 // ALL OF THIS IS OLD CODE / MOCK DATA
 // Find the patient with the given ID
 // const patient = TEST_DATA.find((patient) => patient.id === id);
@@ -55,6 +91,7 @@ const PatientPage = () => {
 
   return (
     <div>
+
       {patient ? (
         <>
               {console.log('Patient information:', patient)}
@@ -63,7 +100,12 @@ const PatientPage = () => {
       ) : (
         <p>Patient not found</p>
       )}
+
+      <h1>Update Patient Record</h1>
+      <Form schema={PatientRecordSchema} onSubmit={handlePatientUpdate} />
+
     </div>
+    
   );
 };
 

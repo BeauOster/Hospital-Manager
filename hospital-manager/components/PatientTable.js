@@ -70,13 +70,12 @@ export const PatientTable = () => {
                         {
                             headerGroup.headers.map( column => (
 
-                                <th {...column.getHeaderProps(column.getSortByToggleProps)}>
+                                <th {...column.getHeaderProps()}>
                                     {column.render('Header')}
                                     <div>{column.canFilter ? column.render('Filter', ) : null}</div>
-                                    <span>
-                                        {/*Check if column is sorted, '' means render an empty string if not sorted at all.*/}
-                                        {column.isSorted ? (column.isSortedDesc ?  ' 🔽' : ' 🔼') : ''}
-                                    </span>
+                                    <button onClick={() => column.toggleSortBy()} className="button">
+                                        {column.isSorted ? (column.isSortedDesc ?  ' 🔽' : ' 🔼') : ('〰️')}
+                                    </button>
                                 </th>
                                 
                             ))
