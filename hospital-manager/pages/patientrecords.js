@@ -1,12 +1,12 @@
-import React from 'react';
-import { PatientTable } from '../components/PatientTable';
+import React from "react";
+import { PatientTable } from "../components/PatientTable";
 
 const PatientRecordsPage = () => {
     return (
-      <div>
-        <PatientTable />
-      </div>
+        <div>
+            <PatientTable />
+        </div>
     );
-  };
-  
-  export default PatientRecordsPage;
+};
+
+export default PatientRecordsPage;
