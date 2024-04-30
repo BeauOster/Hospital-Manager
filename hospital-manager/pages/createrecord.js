@@ -16,14 +16,8 @@ const CreatePatientRecordForm = () => {
         { name: 'Gender', label: 'Gender', type: 'text', required: true }
     ];
 
-    const MedicalRecordFormSchema = [
-        { name: 'RecordID', label: 'Record ID', type: 'number', required: true},
-        { name: 'Medical_History', label: 'Medical History', type: 'text', required: true },
-        { name: 'Diagnosis', label: 'Diagnosis', type: 'text', required: true },
-        { name: 'PatientID', label: 'Patient ID', type: 'number', required: true },
-        { name: 'UserID', label: 'User ID', type: 'number', required: true }
-      ];
-
+    //NOTE: Got rid of medical record form due to time ***
+    
     // Back end stuff here later
     const handlePatientRecordSubmit = (formInput) => {
         // Send formData to backend server for processing
@@ -49,21 +43,7 @@ const CreatePatientRecordForm = () => {
                     </fieldset>
             
             </div>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <h1>Create Patient Medical Record </h1>
-            <div className={recStyles.medRecord}>
-        
-                    <fieldset className={recStyles.fieldBox}>
-                    <legend className={recStyles.legendBox}>Enter Medical Information</legend>
-                        <Form schema={MedicalRecordFormSchema} onSubmit={handleMedicalRecordFormSubmit} />
-                    </fieldset>
-
-            </div>
+            {/*NOTE: Got rid of medical record form due to time */}
             <Footer />
         </div>
     );

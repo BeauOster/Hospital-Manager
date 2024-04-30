@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
-import "../Styles/login.css";
+import regStyles from '../Styles/login.module.css';
+import styles from '../Styles/global.module.css';
 
 const CreateLoginForm = () => {
     const LoginFormSchema = [
@@ -25,10 +26,14 @@ const CreateLoginForm = () => {
     };
 
     return (
-        <div className="login-container">
-            <h1 className="text-center">Login</h1>
-            <LoginForm schema={LoginFormSchema} />
-        </div>
+        <body className={styles.font}>
+            <div className={regStyles.formBody}>
+                <div className={regStyles.loginContainer}>
+                    <h1 className={regStyles.textCenter}>Login</h1>
+                    <LoginForm schema={LoginFormSchema} />
+                </div>
+            </div>
+        </body>
     );
 };
 

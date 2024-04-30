@@ -22,23 +22,8 @@ const PatientDetails = ({ patient }) => {
 
         <br></br>
 
-        <div className={details.infoBody}>
-          <fieldset className={details.address}>
-            <legend className={details.legendSize}>Address</legend>
-            <p>State: {patient.state}</p>
-            <p>City: {patient.city}</p>
-            <p>Zip Code: {patient.zip_code}</p>
-            <p>Phone Number: {patient.phone}</p>
-          </fieldset>
-        </div>
+        
 
-        <br></br>
-
-        <div className={details.infoBody}>
-          <fieldset className={details.medHistory}>
-            <legend className={details.legendSize}>Medical History</legend>
-          </fieldset>
-        </div>
 
       </div>
     </body>

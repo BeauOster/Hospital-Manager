@@ -1,5 +1,9 @@
 import React from "react";
-import SignUpForm from "../components/SignUpform";
+import SignUpForm from '../components/SignUpForm';
+import Header from '../components/Header';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import styles from '../Styles/global.module.css';
 
 const CreateRegisterForm = () => {
     const RegisterFormSchema = [
@@ -30,10 +34,15 @@ const CreateRegisterForm = () => {
     ];
 
     return (
-        <div className="register-container">
-            <h1 className="text-center">Register</h1>
-            <SignUpForm schema={RegisterFormSchema} />
-        </div>
+        <body className={styles.font}>
+            <div className="register-container">
+                <Header />
+                <NavBar />
+                <h1 className="text-center">Register</h1>
+                <SignUpForm schema={RegisterFormSchema} />
+                <Footer />
+            </div>
+        </body>
     );
 };
 

@@ -13,8 +13,6 @@
 }
 
 /* Styling for the About Page Management Paragraph */
-
-
 .aboutMain{
     display: flex;
     flex-direction: column;
@@ -27,4 +25,10 @@
 .workloadFont, .experienceFont, .managementFont {
     font-size: 1.13em;
 }
+
+/* Positioning of each paragraph */
+.workloadParagraph, .experienceParagraph, .managementParagraph{
+    text-align: center;
+}
+
 
