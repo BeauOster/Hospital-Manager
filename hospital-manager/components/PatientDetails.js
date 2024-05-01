@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from '../Styles/global.module.css';
 import details from '../Styles/patientDetails.module.css';
+// import Header from '../components/Header';
+// import NavBar from '../components/NavBar';
+// import Footer from '../components/Footer';
 
 const PatientDetails = ({ patient }) => {
   // Render patient details
@@ -14,9 +17,7 @@ const PatientDetails = ({ patient }) => {
             <legend className={details.legendSize}>Personal Information</legend>
             <p>Age: {patient.Age}</p>
             <p>Gender: {patient.Gender}</p>
-            <p>Birth Date: {patient.birth_date}</p>
-            <p>Social Security Number: {patient.SSN}</p>
-            {/* Add more patient details here if you need to guys :) */}
+            <p>Birth Date: {patient.DOB}</p>
           </fieldset>
         </div>
 

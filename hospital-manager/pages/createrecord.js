@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from '../components/Form';
-
 import recStyles from '../Styles/recordStyle.module.css';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
@@ -12,7 +11,8 @@ const CreatePatientRecordForm = () => {
         { name: 'First_Name', label: 'First Name', type: 'text', required: true },
         { name: 'Last_Name', label: 'Last Name', type: 'text', required: true },
         { name: 'Age', label: 'Age', type: 'number', required: true },
-        { name: 'Gender', label: 'Gender', type: 'text', required: true }
+        { name: 'Gender', label: 'Gender', type: 'text', required: true },
+        { name: 'DOB', label: 'Date of Birth', type: 'date', required: true }
     ];
 
     //NOTE: Got rid of medical record form due to time ***

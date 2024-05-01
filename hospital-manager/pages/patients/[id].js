@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 //import TEST_DATA from '../../components/TEST_DATA.json'
 import PatientDetails from '../../components/PatientDetails';
+import recStyles from '../../Styles/recordStyle.module.css';
 import Form from '../../components/Form';
 
 const PatientPage = () => {
@@ -10,7 +11,9 @@ const PatientPage = () => {
     { name: 'First_Name', label: 'First Name', type: 'text', required: true },
     { name: 'Last_Name', label: 'Last Name', type: 'text', required: true },
     { name: 'Age', label: 'Age', type: 'number', required: true },
-    { name: 'Gender', label: 'Gender', type: 'text', required: true }
+    { name: 'Gender', label: 'Gender', type: 'text', required: true },
+    { name: 'DOB', label: 'Date of Birth', type: 'date', required: true }
+
 ];
 
   const router = useRouter();
@@ -35,7 +38,8 @@ const PatientPage = () => {
           First_Name: data[1],
           Last_Name: data[2],
           Age: data[3],
-          Gender: data[4]
+          Gender: data[4],
+          DOB: data[5]
         };
 
 
@@ -94,7 +98,6 @@ const PatientPage = () => {
 
   return (
     <div>
-
       {patient ? (
         <>
               {console.log('Patient information:', patient)}
@@ -104,11 +107,16 @@ const PatientPage = () => {
         <p>Patient not found</p>
       )}
 
-      <h1>Update Patient Record</h1>
-      <Form schema={PatientRecordSchema} onSubmit={handlePatientUpdate} />
+      <div className={recStyles.patRecord}>
+                
+        <fieldset className={recStyles.fieldBox}>
+            <legend className={recStyles.legendBox}>Update Patient Record</legend>
+            <Form schema={PatientRecordSchema} onSubmit={handlePatientUpdate} />
+        </fieldset>
+        
+      </div>
 
     </div>
-    
   );
 };
 

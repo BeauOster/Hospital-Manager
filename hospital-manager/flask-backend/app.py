@@ -24,10 +24,12 @@ def create_patient_record():
     last_name = form_patientdata['Last_Name']
     age = form_patientdata['Age']
     gender = form_patientdata['Gender']
+    dob = form_patientdata['DOB']
     
     # Insert data into database
     cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO Patient (First_Name, Last_Name, Age, Gender) VALUES (%s, %s, %s, %s)", (first_name, last_name, age, gender))
+    cur.execute("INSERT INTO Patient (First_Name, Last_Name, Age, Gender, DOB) VALUES (%s, %s, %s, %s, %s)", 
+                (first_name, last_name, age, gender, dob))
     mysql.connection.commit()
     cur.close()
     return jsonify(message='Patient record created successfully')
@@ -70,10 +72,10 @@ def update_patient_record(id):
         last_name = form_patientdata['Last_Name']
         age = form_patientdata['Age']
         gender = form_patientdata['Gender']
+        dob = form_patientdata['DOB']
 
         cur = mysql.connection.cursor()
-        cur.execute("UPDATE Patient SET First_Name=%s, Last_Name=%s, Age=%s, Gender=%s WHERE PatientID=%s",
-                    (first_name, last_name, age, gender, id))
+        cur.execute("UPDATE Patient SET First_Name=%s, Last_Name=%s, Age=%s, Gender=%s, DOB=%s WHERE PatientID=%s", (first_name, last_name, age, gender, dob, id))
         mysql.connection.commit()
         cur.close()
         

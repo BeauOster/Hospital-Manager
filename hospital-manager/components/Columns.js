@@ -1,4 +1,5 @@
 import { ColumnFilter } from './ColumnFilter'
+import { format } from 'date-fns';
 
 export const COLUMNS = [
     {
@@ -25,5 +26,10 @@ export const COLUMNS = [
         Header: 'Gender',
         accessor: (row) => row[4],
         Filter: ColumnFilter
+    },
+    {
+        Header: 'Date Of Birth',
+        accessor: (row) => format(new Date(row[5]), 'dd/MM/yyyy'),
+        Filter: ColumnFilter,
     }
 ]
