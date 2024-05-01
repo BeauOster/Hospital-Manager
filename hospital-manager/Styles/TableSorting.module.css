@@ -1,6 +1,6 @@
 .table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+   'Lucida Sans', 'Arial', 'sans-serif';
   width: 100%;
 }
 
@@ -11,13 +11,16 @@
 
 .table tr:nth-child(even){background-color: #f2f2f2;}
 
-.table tr:hover {background-color: #ddd;}
+/*.table tr:hover {background-color: #ddd;}*/
+
+.table tr:hover {background-color: #98d3aa;}
 
 .table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #396bb6;
+  /*background-color: #396bb6;*/
+  background-color: rgb(51, 160, 69);
   color: white;
 }
 

@@ -1,6 +1,11 @@
 import React from 'react';
 import Form from '../components/Form';
 
+import recStyles from '../Styles/recordStyle.module.css';
+import Header from '../components/Header';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+
 const CreatePatientRecordForm = () => {
 
     const PatientRecordSchema = [
@@ -10,14 +15,8 @@ const CreatePatientRecordForm = () => {
         { name: 'Gender', label: 'Gender', type: 'text', required: true }
     ];
 
-    const MedicalRecordFormSchema = [
-        { name: 'RecordID', label: 'Record ID', type: 'number', required: true },
-        { name: 'Medical_History', label: 'Medical History', type: 'text', required: true },
-        { name: 'Diagnosis', label: 'Diagnosis', type: 'text', required: true },
-        { name: 'PatientID', label: 'Patient ID', type: 'number', required: true },
-        { name: 'UserID', label: 'User ID', type: 'number', required: true }
-      ];
-
+    //NOTE: Got rid of medical record form due to time ***
+    
     // Back end stuff here later
     const handlePatientRecordSubmit = (formInput) => {
         fetch('http://localhost:5000/create_patient_record', {
@@ -44,11 +43,21 @@ const CreatePatientRecordForm = () => {
     };
 
     return (
-        <div>
+        <div className={recStyles.recordMain}>
+            <Header />
+            <NavBar />
             <h1>Create Patient Record</h1>
-            <Form schema={PatientRecordSchema} onSubmit={handlePatientRecordSubmit} />
-            <h1>Create Patient Medical Record </h1>
-            <Form schema={MedicalRecordFormSchema} onSubmit={handleMedicalRecordFormSubmit} />
+
+            <div className={recStyles.patRecord}>
+                
+                    <fieldset className={recStyles.fieldBox}>
+                        <legend className={recStyles.legendBox}>Enter Personal Information</legend>
+                        <Form schema={PatientRecordSchema} onSubmit={handlePatientRecordSubmit} />
+                    </fieldset>
+            
+            </div>
+            {/*NOTE: Got rid of medical record form due to time */}
+            <Footer />
         </div>
     );
 };

@@ -1,0 +1,18 @@
+/* Styles for the Patient's Name */
+.patientName{
+    text-align: center;
+    background-color: #31d16e;
+    height: 50px;
+}
+
+/* Styles for Record Contents*/
+.infoBody{
+    border: 2px solid black;
+    font-size: 1.34em;
+}
+
+/* Styling for the legend font */
+.legendSize{
+    font-size: 1.39em;
+}
+
