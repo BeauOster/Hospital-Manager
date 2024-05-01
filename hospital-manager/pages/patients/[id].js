@@ -18,6 +18,7 @@ const PatientPage = () => {
   const { id } = router.query;
   const [patient, setPatient] = useState(null);
 
+  // All of this is backend stuff. This fetches the patient record based on ID.
   useEffect(() => {
 
     const fetchPatient = async () => {
@@ -57,6 +58,7 @@ const PatientPage = () => {
 
   }, [id]);
 
+  // This is more backend stuff, handles updating a record.
   const handlePatientUpdate = async (formInput) => {
 
     try {
@@ -75,7 +77,8 @@ const PatientPage = () => {
 
       const data = await response.json();
       console.log(data.message); // Handles error/success message
-      //Update the patient state with the updated data
+
+      //Update the patient state with the updated data (no need to refresh)
       setPatient(formInput);
 
     } catch (error) {
